@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Gravar Dados</string>
+    <string name="text_button_logout">Deslogar</string>
+    <string name="edit_email">Email</string>
+    <string name="edit_password">Senha</string>
+    <string name="bt_logar">Logar</string>
+    <string name="title_login">Título</string>
+    <string name="first_text_data">Primeiro Dados de Texto</string>
+    <string name="second_text_data">Segundo Dados de Texto</string>
+    <string name="add_new_author">AUTOR</string>
+    <string name="enter_authors_name">NAME</string>
+    <string name="add">ADICIONAR</string>
+</resources>
