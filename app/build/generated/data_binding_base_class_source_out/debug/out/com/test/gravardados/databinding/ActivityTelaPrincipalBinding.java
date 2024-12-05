@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,12 +24,25 @@ public final class ActivityTelaPrincipalBinding implements ViewBinding {
   public final Button btGravarDadosDB;
 
   @NonNull
+  public final EditText editnome;
+
+  @NonNull
+  public final EditText editpeso;
+
+  @NonNull
+  public final Button enviarmerenda;
+
+  @NonNull
   public final LinearLayout main;
 
   private ActivityTelaPrincipalBinding(@NonNull LinearLayout rootView,
-      @NonNull Button btGravarDadosDB, @NonNull LinearLayout main) {
+      @NonNull Button btGravarDadosDB, @NonNull EditText editnome, @NonNull EditText editpeso,
+      @NonNull Button enviarmerenda, @NonNull LinearLayout main) {
     this.rootView = rootView;
     this.btGravarDadosDB = btGravarDadosDB;
+    this.editnome = editnome;
+    this.editpeso = editpeso;
+    this.enviarmerenda = enviarmerenda;
     this.main = main;
   }
 
@@ -65,9 +79,28 @@ public final class ActivityTelaPrincipalBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.editnome;
+      EditText editnome = ViewBindings.findChildViewById(rootView, id);
+      if (editnome == null) {
+        break missingId;
+      }
+
+      id = R.id.editpeso;
+      EditText editpeso = ViewBindings.findChildViewById(rootView, id);
+      if (editpeso == null) {
+        break missingId;
+      }
+
+      id = R.id.enviarmerenda;
+      Button enviarmerenda = ViewBindings.findChildViewById(rootView, id);
+      if (enviarmerenda == null) {
+        break missingId;
+      }
+
       LinearLayout main = (LinearLayout) rootView;
 
-      return new ActivityTelaPrincipalBinding((LinearLayout) rootView, btGravarDadosDB, main);
+      return new ActivityTelaPrincipalBinding((LinearLayout) rootView, btGravarDadosDB, editnome,
+          editpeso, enviarmerenda, main);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +30,9 @@ public final class ActivityFormLoginBinding implements ViewBinding {
   public final EditText emailFields;
 
   @NonNull
+  public final FrameLayout fragmentContainer;
+
+  @NonNull
   public final MaterialToolbar loginToolbar;
 
   @NonNull
@@ -48,12 +52,13 @@ public final class ActivityFormLoginBinding implements ViewBinding {
 
   private ActivityFormLoginBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppCompatButton btnLogin, @NonNull EditText emailFields,
-      @NonNull MaterialToolbar loginToolbar, @NonNull ConstraintLayout main,
-      @NonNull EditText passwordFields, @NonNull TextView textEmail, @NonNull TextView textPassword,
-      @NonNull TextView titleLogin) {
+      @NonNull FrameLayout fragmentContainer, @NonNull MaterialToolbar loginToolbar,
+      @NonNull ConstraintLayout main, @NonNull EditText passwordFields, @NonNull TextView textEmail,
+      @NonNull TextView textPassword, @NonNull TextView titleLogin) {
     this.rootView = rootView;
     this.btnLogin = btnLogin;
     this.emailFields = emailFields;
+    this.fragmentContainer = fragmentContainer;
     this.loginToolbar = loginToolbar;
     this.main = main;
     this.passwordFields = passwordFields;
@@ -101,6 +106,12 @@ public final class ActivityFormLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fragmentContainer;
+      FrameLayout fragmentContainer = ViewBindings.findChildViewById(rootView, id);
+      if (fragmentContainer == null) {
+        break missingId;
+      }
+
       id = R.id.loginToolbar;
       MaterialToolbar loginToolbar = ViewBindings.findChildViewById(rootView, id);
       if (loginToolbar == null) {
@@ -134,7 +145,8 @@ public final class ActivityFormLoginBinding implements ViewBinding {
       }
 
       return new ActivityFormLoginBinding((ConstraintLayout) rootView, btnLogin, emailFields,
-          loginToolbar, main, passwordFields, textEmail, textPassword, titleLogin);
+          fragmentContainer, loginToolbar, main, passwordFields, textEmail, textPassword,
+          titleLogin);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

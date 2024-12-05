@@ -40,11 +40,18 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.GravarDados" >
+
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.gms.version" -->
+        <!-- android:value="18.0.1" /> -->
+        <activity
+            android:name="com.test.gravardados.Menu"
+            android:exported="false" />
         <activity
             android:name="com.test.gravardados.TelaPrincipal"
             android:exported="false" />
         <activity
-            android:name="com.test.gravardados.ui.MainActivity"
+            android:name="com.test.gravardados.FormLogin"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -247,6 +254,12 @@
                 android:value="androidx.startup" />
         </provider>
 
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
         <uses-library
             android:name="android.ext.adservices"
             android:required="false" />

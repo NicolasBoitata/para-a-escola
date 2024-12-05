@@ -57,6 +57,9 @@ android {
     buildFeatures{
         viewBinding = true
     }
+//    viewBinding {
+//        enabled = true
+//    }
 }
 
 dependencies {
@@ -67,10 +70,12 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.database)
+    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation ("androidx.fragment:fragment-ktx:1.5.5")
+//    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.facebook.android:facebook-android-sdk:17.0.2")
     implementation("com.google.android.gms:play-services-auth:21.2.0")
@@ -92,6 +97,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
     //Android Navigation Architecture
-    implementation("androidx.navigation:navigation-fragment-ktx:2.2.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.2.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.4")
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.4")
+
+
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
+//    implementation("com.google.firebase:firebase-database")
 }

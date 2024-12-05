@@ -4,7 +4,7 @@
             "outputFile": "com.test.gravardados.app-mergeDebugResources-3:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Nicolas\\.gradle\\caches\\8.9\\transforms\\e68191c71729d37f54319c2b0c9c9a86\\transformed\\facebook-login-17.0.2\\res\\values-es-rES\\values-es-rES.xml",
+                    "source": "C:\\Users\\Nicolas\\.gradle\\caches\\8.9\\transforms\\028c0c8f00550f275213582d7eb893f3\\transformed\\facebook-login-17.0.2\\res\\values-es-rES\\values-es-rES.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
